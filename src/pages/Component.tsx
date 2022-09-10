@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
-import { ControlCheckbox } from "../components";
+import { ControlCheckbox, InputText, InputTextarea } from "../components";
 
 const Container = styled("div")`
   background: #f4f4f4;
@@ -47,7 +47,7 @@ const ComponentTitle = styled("p")`
   left: 16px;
   padding: 0 8px;
   position: absolute;
-  top: -16px;
+  top: -37px;
 `;
 const CheckboxGroupWrapper = styled("div")`
   background-color: transparent;
@@ -133,6 +133,16 @@ export const Component: React.VFC = () => {
           <ComponentContainer>
             <ComponentTitle>ControlCheckbox</ComponentTitle>
             <ControlCheckbox></ControlCheckbox>
+          </ComponentContainer>
+
+          <ComponentContainer>
+            <ComponentTitle>InputText</ComponentTitle>
+            <InputText></InputText>
+          </ComponentContainer>
+
+          <ComponentContainer>
+            <ComponentTitle>InputTextarea</ComponentTitle>
+            <InputTextarea></InputTextarea>
           </ComponentContainer>
         </FormContainer>
       </Inner>
