@@ -18,7 +18,7 @@ export const ControlCheckbox: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <>
       <Controller
         name="isChecked"
         control={control}
@@ -29,7 +29,6 @@ export const ControlCheckbox: React.FC = () => {
         )}
       />
       {errors.isChecked && <label>チェックしてください</label>}
-      <input type="submit" />
-    </form>
+    </>
   );
 };
