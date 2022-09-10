@@ -1,20 +1,21 @@
-import { useForm, Controller, SubmitHandler } from 'react-hook-form'
-import Checkbox from '@mui/material/Checkbox'
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import Checkbox from "@mui/material/Checkbox";
+import React from "react";
 
 type MyFormData = {
-  isChecked: boolean
-}
+  isChecked: boolean;
+};
 
-export const ControlCheckbox = () => {
+export const ControlCheckbox: React.FC = () => {
   const {
     handleSubmit,
     control,
-    formState: { errors }
-  } = useForm<MyFormData>()
+    formState: { errors },
+  } = useForm<MyFormData>();
 
   const onSubmit: SubmitHandler<MyFormData> = (data) => {
-    console.log(data)
-  }
+    console.log(data);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -27,9 +28,8 @@ export const ControlCheckbox = () => {
           <Checkbox onChange={onChange} value={value} />
         )}
       />
-      {/* eslint-disable jsx-a11y/label-has-associated-control */}
       {errors.isChecked && <label>チェックしてください</label>}
       <input type="submit" />
     </form>
-  )
-}
+  );
+};

@@ -1,1 +1,1 @@
-export { SwiperContainerComponent, SwiperWrapperComponent } from "./Carousel";
+export { ControlCheckbox } from "./ControlCheckbox";
