@@ -1,1 +1,2 @@
-export { ReactSwiper } from "./Swiper";
+export { ReactSwiper } from "./ReactSwiper";
+export { ReactSplide } from "./ReactSplide";
