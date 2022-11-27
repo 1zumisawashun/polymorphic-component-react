@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import "swiper/css";
-// import "./styles.css";
+import { slideList } from "../../functions/constants/swiperItem";
 
 export const ReactSwiper: React.FC = () => {
   const changeSlide = (index: number) => {
@@ -12,39 +12,17 @@ export const ReactSwiper: React.FC = () => {
 
   const swiperRef = useRef<SwiperRef>(null);
 
-  const slideList = [
-    {
-      index: 0,
-      title: "スライド1",
-      imgSrc: "https://picsum.photos/300/200",
-      imgAlt: "サンプル画像1",
-    },
-    {
-      index: 1,
-      title: "スライド2",
-      imgSrc: "https://picsum.photos/300/200/?blur=2",
-      imgAlt: "サンプル画像1",
-    },
-    {
-      index: 2,
-      title: "スライド3",
-      imgSrc: "https://picsum.photos/seed/picsum/300/200",
-      imgAlt: "サンプル画像3",
-    },
-  ];
-
   return (
     <>
       <Swiper
         ref={swiperRef}
         initialSlide={slideList[0].index}
-        slidesPerView={1}
+        slidesPerView={3}
         simulateTouch={false}
       >
         {slideList.map((slideItem) => (
           <SwiperSlide key={slideItem.index}>
-            <div>{slideItem.title}</div>
-            <img src={slideItem.imgSrc} alt={slideItem.imgAlt} />
+            <img src={slideItem.imgSrc} alt={slideItem.imgAlt} height={300} />
           </SwiperSlide>
         ))}
       </Swiper>

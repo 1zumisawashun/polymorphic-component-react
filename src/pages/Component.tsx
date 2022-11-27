@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "@emotion/styled";
 import { ControlCheckbox, InputText, InputTextarea } from "../components/uis";
 import { ReactSwiper, ReactSplide } from "../components/models";
+import { slideList } from "../functions/constants/swiperItem";
 
 const Container = styled("div")`
   background: #f4f4f4;
@@ -138,7 +139,7 @@ export const Component: React.VFC = () => {
 
           <ComponentContainer>
             <ComponentTitle>Splide</ComponentTitle>
-            <ReactSplide></ReactSplide>
+            <ReactSplide slideList={slideList}></ReactSplide>
           </ComponentContainer>
 
           <ComponentContainer>

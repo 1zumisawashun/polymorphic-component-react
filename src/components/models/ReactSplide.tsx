@@ -9,36 +9,48 @@ const SlideImage = styled("img")`
   object-fit: cover;
 `;
 
-export const ReactSplide: React.FC = () => {
+type ReactSplideProps = {
+  slideList: slideItem[];
+};
+type slideItem = {
+  index: number;
+  title: string;
+  imgSrc: string;
+  imgAlt: string;
+};
+
+export const ReactSplide: React.FC<ReactSplideProps> = ({ slideList }) => {
   return (
     <Splide
       aria-label="私のお気に入りの画像集"
       options={{
-        autoplay: true, // 自動再生を有効
-        interval: 3000, // 自動再生の間隔を3秒に設定
+        type: "loop",
+        speed: 600,
+        padding: "20%",
+        perPage: 2,
+        perMove: 1,
+        wheel: true,
+        releaseWheel: true,
+        trimSpace: false,
+        focus: "center",
+        updateOnMove: false,
+        gap: 30,
+        breakpoints: {
+          500: {
+            destroy: true,
+          },
+        },
       }}
     >
-      <SplideSlide>
-        <SlideImage
-          className="slide-img"
-          src="https://www.pakutaso.com/shared/img/thumb/shikun20220402_114719-2_TP_V.jpg"
-          alt="かわいい猫の画像 part1"
-        />
-      </SplideSlide>
-      <SplideSlide>
-        <SlideImage
-          className="slide-img"
-          src="https://www.pakutaso.com/shared/img/thumb/shikun20220402_122123_TP_V.jpg"
-          alt="かわいい猫の画像 part2"
-        />
-      </SplideSlide>
-      <SplideSlide>
-        <SlideImage
-          className="slide-img"
-          src="https://www.pakutaso.com/shared/img/thumb/sikun_20220402-180657-2_TP_V.jpg"
-          alt="かわいい猫の画像 part3"
-        />
-      </SplideSlide>
+      {slideList.map((slideItem) => (
+        <SplideSlide key={slideItem.index}>
+          <SlideImage
+            src={slideItem.imgSrc}
+            alt={slideItem.imgAlt}
+            height={300}
+          />
+        </SplideSlide>
+      ))}
     </Splide>
   );
 };
