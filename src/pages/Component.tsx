@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
-import { ControlCheckbox, InputText, InputTextarea } from "../components";
+import { ControlCheckbox, InputText, InputTextarea } from "../components/uis";
+import { ReactSwiper } from "../components/models";
 
 const Container = styled("div")`
   background: #f4f4f4;
@@ -130,6 +131,11 @@ export const Component: React.VFC = () => {
     <Container>
       <Inner>
         <FormContainer>
+          <ComponentContainer>
+            <ComponentTitle>Swiper</ComponentTitle>
+            <ReactSwiper></ReactSwiper>
+          </ComponentContainer>
+
           <ComponentContainer>
             <ComponentTitle>ControlCheckbox</ComponentTitle>
             <ControlCheckbox></ControlCheckbox>
